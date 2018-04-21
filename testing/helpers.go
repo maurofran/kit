@@ -18,7 +18,7 @@ func Assert(tb testing.TB, condition bool, msg string, v ...interface{}) {
 }
 
 // Ok fails a test if err is not nil.
-func Ok(tb Testing, err error) {
+func Ok(tb testing.TB, err error) {
 	if err != nil {
 		_, file, line, _ := runtime.Caller(1)
 		fmt.Printf("\033[31m%s:%d: unexpected error: %s\033[39m\n\n", filepath.Base(file), line, err.Error())
